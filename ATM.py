@@ -86,7 +86,7 @@ while login_status == False:
         print("Sorry, Your PIN is wrong")
 
 while looping == "y" and login_status == True:
-    u = user[id_checking(id)]
+    u = user[id_checking(user_id)]
     print("Welcome to ATM Bank ABC")
     print("1. Balance Check")
     print("2. Transfer")
@@ -101,13 +101,13 @@ while looping == "y" and login_status == True:
         looping = "n"
     elif a == 2:
         print("Please insert beneficiary account number")
-        acc_no : input("Beneficiary Account Number : ")
-        ac = acc_checking(acc_no)
+        ac_no = input("Beneficiary Account Number : ")
+        acchk = acc_checking(ac_no)
 
-        if ac >= 0:
+        if acchk >= 0:
             print("Account Number found, Please insert amount that will be transferred")
             amount = input("Amount that will be transferred : ")
-            transfer_money(amount,acc_no)
+            transfer_money(amount,ac_no)
             print("")
             looping = "n"
         else:
